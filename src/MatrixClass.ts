@@ -16,7 +16,7 @@ export default class MatrixClass {
         const isSquareMatrix: boolean = matrix.every(row => row.length === matrix.length);
 
         if (!isSquareMatrix) {
-            error = 'неверный формат матрицы. Матрица не квадратная';
+            error = 'неверный формат матрицы';
         }
 
         matrix.forEach(function(currentRow, index){
