@@ -22,3 +22,24 @@ function showName(firstName: string, lastName: string, ...titles: string[]) {
 }
 
 showName("Юлий", "Цезарь", "Консул", "Император");
+
+class MyClass {
+
+    // Все аргументы функции находятся в псевдомассиве arguments под своими порядковыми номерами
+    showName() {
+        console.log('using pseudo array arguments: ', arguments.length );
+        console.log('using pseudo array arguments: ', arguments[0] );
+        console.log('using pseudo array arguments: ', arguments[1] );
+
+        // Объект arguments можно перебирать
+        // for (let arg of arguments) alert(arg);
+    }
+}
+
+const myClass = new MyClass();
+
+// Вывод: 2, Юлий, Цезарь
+myClass.showName("Юлий", "Цезарь");
+
+// Вывод: 1, Илья, undefined (второго аргумента нет)
+myClass.showName("Илья");
