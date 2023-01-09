@@ -43,3 +43,33 @@ myClass.showName("Юлий", "Цезарь");
 
 // Вывод: 1, Илья, undefined (второго аргумента нет)
 myClass.showName("Илья");
+
+// Примеры использования Оператора расширения (по-английски он наверное называется Spread Operator)
+const arr = [3, 5, 1];
+
+console.log('Spread operator example: ', (Math.max(...arr))); // 5 (оператор "раскрывает" массив в список аргументов)
+
+const arr1 = [1, -2, 3, 4];
+const arr2 = [8, 3, -8, 1];
+
+console.log('Spread operator example: ', Math.max(...arr1, ...arr2)); // 8
+
+const arr3 = [1, -2, 3, 4];
+const arr4 = [8, 3, -8, 1];
+console.log('Spread operator example: ', Math.max(1, ...arr3, 2, ...arr4, 25) ); // 25
+
+
+// Оператор расширения можно использовать и для слияния массивов:
+const arr5 = [3, 5, 1];
+const arr6 = [8, 9, 15];
+
+const merged = [0, ...arr5, 2 ,...arr6];
+
+console.log('Spread operator example: ', merged); // 0,3,5,1,2,8,9,15 (0, затем arr, затем 2, в конце arr2)
+
+
+// оператор расширения подойдёт для того, чтобы превратить строку в массив символов
+const str = "Привет";
+
+console.log('Spread operator example: ', [...str] ); // П,р,и,в,е,т
+console.log('Тоже самое что и Array.from', Array.from(str));
