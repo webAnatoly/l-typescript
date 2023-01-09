@@ -1,4 +1,4 @@
-function sumAll(...args) { // args — имя массива
+function sumAll(...args: number[]): number { // args — имя массива
     let sum = 0;
 
     for (let arg of args) sum += arg;
